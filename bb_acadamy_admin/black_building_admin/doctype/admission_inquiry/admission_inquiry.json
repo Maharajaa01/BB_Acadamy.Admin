@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "student_name",
   "email",
   "phone",
@@ -15,6 +16,14 @@
   "status"
  ],
  "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "AI-\nAI-YYYY-\nAI-YYYY-MM-",
+   "reqd": 1,
+   "set_only_once": 1
+  },
   {
    "fieldname": "student_name",
    "fieldtype": "Data",

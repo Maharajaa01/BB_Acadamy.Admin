@@ -8,15 +8,13 @@
  "field_order": [
   "title",
   "type",
-  "subject",
   "standard",
+  "subject",
   "group",
-  "section_break_qp",
-  "year",
   "exam_type",
-  "section_break_file",
-  "file_url",
+  "year",
   "description",
+  "file_url",
   "is_published"
  ],
  "fields": [
@@ -34,12 +32,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "subject",
-   "fieldtype": "Data",
-   "label": "Subject",
-   "reqd": 1
-  },
-  {
    "fieldname": "standard",
    "fieldtype": "Select",
    "label": "Standard",
@@ -47,35 +39,32 @@
    "reqd": 1
   },
   {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
    "fieldname": "group",
    "fieldtype": "Select",
    "label": "Group",
-   "options": "\nscience\ncommerce",
-   "depends_on": "eval:doc.standard=='11' || doc.standard=='12'"
-  },
-  {
-   "fieldname": "section_break_qp",
-   "fieldtype": "Section Break",
-   "label": "Question Paper Details",
-   "depends_on": "eval:doc.type=='Question Paper'"
-  },
-  {
-   "fieldname": "year",
-   "fieldtype": "Int",
-   "label": "Year",
-   "depends_on": "eval:doc.type=='Question Paper'"
+   "options": "\nscience\ncommerce"
   },
   {
    "fieldname": "exam_type",
    "fieldtype": "Select",
    "label": "Exam Type",
-   "options": "\nquarterly\nhalf-yearly\nannual",
-   "depends_on": "eval:doc.type=='Question Paper'"
+   "options": "\nquarterly\nhalf-yearly\nannual"
   },
   {
-   "fieldname": "section_break_file",
-   "fieldtype": "Section Break",
-   "label": "File"
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Year"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
   },
   {
    "fieldname": "file_url",
@@ -84,21 +73,16 @@
    "reqd": 1
   },
   {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
-  },
-  {
    "fieldname": "is_published",
    "fieldtype": "Check",
-   "label": "Is Published",
-   "default": "0"
+   "label": "Published",
+   "default": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-13 09:51:37.286768",
+ "modified": "2026-01-14 00:15:00.000000",
  "modified_by": "Administrator",
  "module": "Black Building Admin",
  "name": "Study Material",
