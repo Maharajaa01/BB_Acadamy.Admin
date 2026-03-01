@@ -1,0 +1,250 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-01 11:06:33.314082",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "personal_details_section",
+  "applicant_name",
+  "date_of_birth",
+  "age",
+  "marital_status",
+  "address",
+  "contact_no_1",
+  "contact_no_2",
+  "email_id",
+  "column_break_1",
+  "medical_problems",
+  "languages_known",
+  "experienced",
+  "additional_skills",
+  "hobbies",
+  "positive_points",
+  "education_section",
+  "education_details",
+  "experience_section",
+  "years_of_experience",
+  "experience_details",
+  "job_details_section",
+  "company_name",
+  "job_role",
+  "salary_expectation",
+  "timing",
+  "internship_duration",
+  "internship_stipend",
+  "part_time_salary",
+  "full_time_salary",
+  "joining_date",
+  "reference_section",
+  "referred_by",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Applicant Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "Married\nUnmarried\nWidowed\nDivorced"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "contact_no_1",
+   "fieldtype": "Data",
+   "label": "Contact No 1"
+  },
+  {
+   "fieldname": "contact_no_2",
+   "fieldtype": "Data",
+   "label": "Contact No 2"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "medical_problems",
+   "fieldtype": "Small Text",
+   "label": "Medical Problems"
+  },
+  {
+   "fieldname": "languages_known",
+   "fieldtype": "Data",
+   "label": "Languages Known"
+  },
+  {
+   "fieldname": "additional_skills",
+   "fieldtype": "Small Text",
+   "label": "Additional Courses / Skills"
+  },
+  {
+   "fieldname": "hobbies",
+   "fieldtype": "Small Text",
+   "label": "Hobbies"
+  },
+  {
+   "fieldname": "positive_points",
+   "fieldtype": "Small Text",
+   "label": "Positive Points (About You)"
+  },
+  {
+   "fieldname": "education_section",
+   "fieldtype": "Section Break",
+   "label": "Education Details"
+  },
+  {
+   "fieldname": "education_details",
+   "fieldtype": "Table",
+   "label": "Education Records",
+   "options": "Job Application Education"
+  },
+  {
+   "depends_on": "eval:doc.experienced == 1",
+   "fieldname": "experience_section",
+   "fieldtype": "Section Break",
+   "label": "Experience Details"
+  },
+  {
+   "fieldname": "years_of_experience",
+   "fieldtype": "Float",
+   "label": "Years of Experience"
+  },
+  {
+   "fieldname": "experience_details",
+   "fieldtype": "Small Text",
+   "label": "Experience Description"
+  },
+  {
+   "depends_on": "eval:doc.experienced == 1",
+   "fieldname": "job_details_section",
+   "fieldtype": "Section Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "job_role",
+   "fieldtype": "Data",
+   "label": "Job Role"
+  },
+  {
+   "fieldname": "salary_expectation",
+   "fieldtype": "Currency",
+   "label": "Salary Expectation"
+  },
+  {
+   "fieldname": "timing",
+   "fieldtype": "Data",
+   "label": "Timing"
+  },
+  {
+   "fieldname": "internship_duration",
+   "fieldtype": "Data",
+   "label": "Internship Duration"
+  },
+  {
+   "fieldname": "internship_stipend",
+   "fieldtype": "Currency",
+   "label": "Internship Stipend"
+  },
+  {
+   "fieldname": "part_time_salary",
+   "fieldtype": "Currency",
+   "label": "Part Time Salary"
+  },
+  {
+   "fieldname": "full_time_salary",
+   "fieldtype": "Currency",
+   "label": "Full Time Salary"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference & Status"
+  },
+  {
+   "fieldname": "referred_by",
+   "fieldtype": "Data",
+   "label": "Referred By"
+  },
+  {
+   "default": "Waiting List",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Application Status",
+   "options": "Selected\nWaiting List\nNot Selected"
+  },
+  {
+   "default": "0",
+   "fieldname": "experienced",
+   "fieldtype": "Check",
+   "label": "Experienced"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-01 13:38:39.648043",
+ "modified_by": "Administrator",
+ "module": "Black Building Admin",
+ "name": "Job Application",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
