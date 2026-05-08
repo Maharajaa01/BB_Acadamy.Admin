@@ -1,0 +1,21 @@
+{
+  "name": "bb-academy-dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=/assets/bb_acadamy_admin/BB_Academy_Dashboard/ && yarn copy-html-entry",
+    "preview": "vite preview",
+    "copy-html-entry": "cp ../bb_acadamy_admin/public/BB_Academy_Dashboard/index.html ../bb_acadamy_admin/www/BB_Academy_Dashboard.html"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.5.1",
+    "vue": "^3.5.32",
+    "vue-router": "^4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "vite": "^8.0.10"
+  }
+}

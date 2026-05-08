@@ -1,46 +1,28 @@
 {
  "actions": [],
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:subject_name",
- "creation": "2026-01-14 00:12:24.976994",
+ "autoname": "field:subject_group_name",
+ "creation": "2026-03-08 10:10:13.003765",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "subject_name",
-  "standard",
-  "subject_group"
+  "subject_group_name"
  ],
  "fields": [
   {
-   "fieldname": "subject_name",
+   "fieldname": "subject_group_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Subject Name",
-   "reqd": 1,
+   "label": "Subject Group Name",
    "unique": 1
-  },
-  {
-   "fieldname": "standard",
-   "fieldtype": "Table MultiSelect",
-   "label": "Standard",
-   "options": "Standard Detail",
-   "reqd": 1
-  },
-  {
-   "fieldname": "subject_group",
-   "fieldtype": "Table MultiSelect",
-   "label": "Subject Group",
-   "options": "Subject Group Detail"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-08 10:13:53.684773",
+ "modified": "2026-03-08 10:14:52.719098",
  "modified_by": "Administrator",
  "module": "Black Building Admin",
- "name": "Subject",
+ "name": "Subject Group",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -58,6 +40,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

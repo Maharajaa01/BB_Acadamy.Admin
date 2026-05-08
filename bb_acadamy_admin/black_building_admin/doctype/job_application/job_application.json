@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "JP.###",
  "creation": "2026-03-01 11:06:33.314082",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,6 +16,7 @@
   "contact_no_2",
   "email_id",
   "column_break_1",
+  "job_opening",
   "medical_problems",
   "languages_known",
   "experienced",
@@ -28,14 +30,15 @@
   "experience_details",
   "job_details_section",
   "company_name",
-  "job_role",
   "salary_expectation",
-  "timing",
-  "internship_duration",
   "internship_stipend",
   "part_time_salary",
-  "full_time_salary",
   "joining_date",
+  "column_break_ttwm",
+  "job_role",
+  "timing",
+  "internship_duration",
+  "full_time_salary",
   "reference_section",
   "referred_by",
   "status"
@@ -219,15 +222,25 @@
    "fieldname": "experienced",
    "fieldtype": "Check",
    "label": "Experienced"
+  },
+  {
+   "fieldname": "job_opening",
+   "fieldtype": "Data",
+   "label": "Job Opening"
+  },
+  {
+   "fieldname": "column_break_ttwm",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-01 13:38:39.648043",
+ "modified": "2026-03-08 08:51:21.754875",
  "modified_by": "Administrator",
  "module": "Black Building Admin",
  "name": "Job Application",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

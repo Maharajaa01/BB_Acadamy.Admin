@@ -5,6 +5,17 @@ app_description = "This App used for Black Building Tution Center to Manage thei
 app_email = "maharajab.tech@gmail.com"
 app_license = "mit"
 
+# Fixtures
+# ------------------
+fixtures = [
+    {
+        "doctype": "Dashboard Chart",
+        "filters": {
+            "name": "Students Application Form"
+        }
+    }
+]
+
 # Apps
 # ------------------
 
@@ -137,34 +148,33 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Employee Checkin": {
+        "before_save": "bb_acadamy_admin.black_building_admin.payroll.attendance.calculate_attendance_deviation"
+    },
+    "Employee": {
+        "before_save": "bb_acadamy_admin.black_building_admin.payroll.employee.calculate_salary_rates"
+    },
+    "Leave Application": {
+        "on_submit": "bb_acadamy_admin.black_building_admin.payroll.leave.create_leave_deduction",
+        "on_cancel": "bb_acadamy_admin.black_building_admin.payroll.leave.cancel_leave_deduction"
+    },
+    "Salary Slip": {
+        "on_submit": "bb_acadamy_admin.black_building_admin.payroll.salary_slip_email.send_salary_slip_email"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"bb_acadamy_admin.tasks.all"
-# 	],
-# 	"daily": [
-# 		"bb_acadamy_admin.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"bb_acadamy_admin.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"bb_acadamy_admin.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"bb_acadamy_admin.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    # Runs on the 28th of every month — gives 2-3 days buffer before payroll
+    "cron": {
+        "0 9 28 * *": [
+            "bb_acadamy_admin.black_building_admin.payroll.monthly.create_attendance_deductions"
+        ]
+    }
+}
 
 # Testing
 # -------
@@ -242,3 +252,5 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+website_route_rules = [{'from_route': '/BB_Academy_Dashboard/<path:app_path>', 'to_route': 'BB_Academy_Dashboard'},]
