@@ -43,7 +43,7 @@ def _current_employee() -> dict[str, Any]:
 
 
 def _user_roles(user: str) -> list[str]:
-    return [r.role for r in frappe.get_roles(user)]
+    return frappe.get_roles(user)
 
 
 def _is_hr(user: str | None = None) -> bool:
